@@ -322,58 +322,77 @@ margin-top: 20px;
   border-radius: 15px;
 }
 
-
+.exercises{
+  width: 100%;
+  margin: 0 auto;
+}
+.exercises-header{
+  width: 80%;
+text-align: left;
+padding: 50px;
+margin: 0 auto;
+}
+.exercises-header h1{
+color: var(--primary-white);
+font-size: 4rem;
+}
+.exercises-header p{
+  color: var(--pragraph-gray);
+  font-size: 1.5rem;
+  }
 .exercises-img {
   display: grid;
   grid-template-areas: 
     'item1 item2 item2 item2 item2 item3'
     'item4 item4 item4 item5 item6 item6';
   padding: 10px;
-  gap: 1px; /* Space between items */
-  width: 80%; /* Full width */
-  margin: auto; /* Center align */
+  gap: 1px; 
+  width: 80%; 
+  margin: auto; 
 }
 
 .item1, .item2, .item3, .item4, .item5, .item6 {
   position: relative;
-  text-align: center; /* Center align text */
-  height: 300px; /* Fixed height for all items */
+  text-align: center; 
+  height: 300px; 
 }
 
-.item1 { background-color: rgba(255, 0, 0, 0.5); }
-.item2 { background-color: rgba(0, 255, 0, 0.5); }
-.item3 { background-color: rgba(0, 0, 255, 0.5); }
-.item4 { background-color: rgba(255, 255, 0, 0.5); }
-.item5 { background-color: rgba(0, 255, 255, 0.5); }
-.item6 { background-color: rgba(255, 0, 255, 0.5); }
+.item1 { background-color: rgba(0, 225, 255, 0.9); }
+.item2 { background-color: rgba(0, 255, 0,0.8); }
+.item3 { background-color: rgba(0, 0, 255,0.8); }
+.item4 { background-color: rgba(255, 255, 0,0.8); }
+.item5 { background-color: rgba(0, 255, 255,0.8); }
+.item6 { background-color: rgba(255, 0, 255,0.8); }
 
 .exercises-img img {
-  width: 100%; /* Ensure images fit their containers */
-  height: 100%; /* Ensure images fit within the fixed height */
-  object-fit: cover; /* Maintain aspect ratio and cover the entire area */
-  opacity: 0.7; /* Example opacity */
+  width: 100%; 
+  height: 100%; 
+  object-fit: cover; 
+  opacity: 0.7; 
 }
 
 .item {
   display: flex;
   flex-direction: column;
-  justify-content: center; /* Center content vertically */
-  align-items: center; /* Center content horizontally */
+  justify-content: center; 
+  align-items: center; 
 }
 
 .item p {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+ 
   margin: 0;
   color: rgb(255, 255, 255);
   font-size: 1.2rem;
- 
   padding: 5px 10px;
   border-radius: 5px;
 }
-
+.item1 p {
+  top: 80%;
+  left: 20%;
+  color: #000000;
+   transform: translate(-50%, -50%);
+}
 /* main - end*/
 /* footer-start */
 .container {
