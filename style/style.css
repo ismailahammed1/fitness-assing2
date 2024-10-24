@@ -292,7 +292,7 @@ color: var(--secondary-gray);
   display: flex;
   padding:50px ;
   justify-content: space-between;
-  border-radius: 10px;
+  border-radius: 20px;
 
 }
 .runtime-text{
@@ -325,42 +325,54 @@ margin-top: 20px;
 
 .exercises-img {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 columns of equal width */
-  grid-auto-rows: 1fr; /* Rows will adjust to maintain square shape */
-  width: 100%; /* Adjust the width as needed */
-  gap: 0; /* No gap between items */
+  grid-template-areas: 
+    'item1 item2 item2 item2 item2 item3'
+    'item4 item4 item4 item5 item6 item6';
+  padding: 10px;
+  gap: 1px; /* Space between items */
+  width: 80%; /* Full width */
+  margin: auto; /* Center align */
+}
+
+.item1, .item2, .item3, .item4, .item5, .item6 {
+  position: relative;
+  text-align: center; /* Center align text */
+  height: 300px; /* Fixed height for all items */
+}
+
+.item1 { background-color: rgba(255, 0, 0, 0.5); }
+.item2 { background-color: rgba(0, 255, 0, 0.5); }
+.item3 { background-color: rgba(0, 0, 255, 0.5); }
+.item4 { background-color: rgba(255, 255, 0, 0.5); }
+.item5 { background-color: rgba(0, 255, 255, 0.5); }
+.item6 { background-color: rgba(255, 0, 255, 0.5); }
+
+.exercises-img img {
+  width: 100%; /* Ensure images fit their containers */
+  height: 100%; /* Ensure images fit within the fixed height */
+  object-fit: cover; /* Maintain aspect ratio and cover the entire area */
+  opacity: 0.7; /* Example opacity */
 }
 
 .item {
-  position: relative;
-  overflow: hidden; /* Ensures that content stays within bounds */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center content vertically */
+  align-items: center; /* Center content horizontally */
 }
 
-.item img {
-  width: 100%; /* Make the image fill the container */
-  height: 100%; /* Ensure the image covers the whole area */
-  object-fit: cover; /* Crop the image to maintain aspect ratio */
-}
-
-.item::after {
-  content: ""; /* Empty content for the caption text */
-  display: block;
+.item p {
   position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  text-align: center;
-  background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
-  color: white;
-  padding: 5px 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  color: rgb(255, 255, 255);
+  font-size: 1.2rem;
+ 
+  padding: 5px 10px;
+  border-radius: 5px;
 }
-
-.item1::after { content: "Image 1"; }
-.item2::after { content: "Image 2"; }
-.item3::after { content: "Image 3"; }
-.item4::after { content: "Image 4"; }
-.item5::after { content: "Image 5"; }
-.item6::after { content: "Image 6"; }
 
 /* main - end*/
 /* footer-start */
@@ -705,5 +717,21 @@ footer {
     
       .footer-col h3, .footer-col ul li a {
         margin-bottom: 20px; 
+      }
+      .exercises-header {
+        text-align: center;
+      }
+    
+      .exercises-img {
+        grid-template-areas: 
+          'item1 item2'
+          'item3 item4'
+          'item5 item6';
+      }
+     .item p{
+     font-size: 1rem;
+     }
+      .item1, .item2, .item3, .item4, .item5, .item6 {
+        height: auto;
       }
 }
